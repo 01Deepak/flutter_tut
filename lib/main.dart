@@ -18,21 +18,29 @@ class Home extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'hello deepak',
-                style: TextStyle(fontFamily: 'IndieFlower'),
-              ),
-              // Image(
-              //     image: NetworkImage(
-              //         'https://images.unsplash.com/photo-1675334159066-ca737fe1b726?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80'))
-              // Image(image: AssetImage('assets/images/image-1.jpg'))
-              Image.asset('assets/images/image-4.jpg')
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.airport_shuttle,
+              color: Colors.amber,
+              size: 50.0,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  print("clicked on elevated button");
+                },
+                child: Text('click')),
+            ElevatedButton.icon(
+                onPressed: () {
+                  print("clicked on elevated button");
+                },
+                icon: Icon(
+                  Icons.email,
+                  color: Colors.amber,
+                ),
+                label: Text('icon button'))
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
