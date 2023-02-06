@@ -6,8 +6,15 @@ void main() {
   );
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var _counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,44 +24,20 @@ class Home extends StatelessWidget {
           'my first app in flutter',
         ),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Expanded(
-            flex: 6,
-            child: Container(
-              child: Text('one'),
-              color: Colors.amber,
-              padding: EdgeInsets.all(30),
-              margin: EdgeInsets.all(20),
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              child: Text(
-                'two',
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Colors.black,
-              padding: EdgeInsets.all(30),
-              margin: EdgeInsets.all(20),
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              child: Text('three'),
-              color: Colors.cyan,
-              padding: EdgeInsets.all(30),
-              margin: EdgeInsets.all(20),
-            ),
-          ),
-        ],
-      ),
+      body: Row(children: [
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _counter = _counter + 1;
+            });
+          },
+          child: Text('increment'),
+        ),
+        Text('${_counter}'),
+      ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("floating action button clicked");
+          print("clicked");
         },
         child: Text('click'),
       ),
