@@ -17,31 +17,11 @@ class Home extends StatelessWidget {
           'my first app in flutter',
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.airport_shuttle,
-              color: Colors.amber,
-              size: 50.0,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  print("clicked on elevated button");
-                },
-                child: Text('click')),
-            ElevatedButton.icon(
-                onPressed: () {
-                  print("clicked on elevated button");
-                },
-                icon: Icon(
-                  Icons.email,
-                  color: Colors.amber,
-                ),
-                label: Text('icon button'))
-          ],
-        ),
+      body: Container(
+        padding: EdgeInsets.fromLTRB(20, 50, 20, 50),
+        margin: EdgeInsets.all(50),
+        child: Text('Hello'),
+        color: Colors.amber,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
