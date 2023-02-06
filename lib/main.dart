@@ -26,7 +26,11 @@ class Home extends StatelessWidget {
                 'hello deepak',
                 style: TextStyle(fontFamily: 'IndieFlower'),
               ),
-              Text('hello Akash')
+              // Image(
+              //     image: NetworkImage(
+              //         'https://images.unsplash.com/photo-1675334159066-ca737fe1b726?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80'))
+              // Image(image: AssetImage('assets/images/image-1.jpg'))
+              Image.asset('assets/images/image-4.jpg')
             ],
           ),
         ),
