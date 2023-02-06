@@ -17,26 +17,38 @@ class Home extends StatelessWidget {
           'my first app in flutter',
         ),
       ),
-      body: Column(
+      body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            child: Text('one'),
-            color: Colors.amber,
-            padding: EdgeInsets.all(20),
-          ),
-          Container(
-            child: Text(
-              'two',
-              style: TextStyle(color: Colors.white),
+          Expanded(
+            flex: 6,
+            child: Container(
+              child: Text('one'),
+              color: Colors.amber,
+              padding: EdgeInsets.all(30),
+              margin: EdgeInsets.all(20),
             ),
-            color: Colors.black,
-            padding: EdgeInsets.all(30),
           ),
-          Container(
-            child: Text('three'),
-            color: Colors.cyan,
-            padding: EdgeInsets.all(40),
+          Expanded(
+            flex: 3,
+            child: Container(
+              child: Text(
+                'two',
+                style: TextStyle(color: Colors.white),
+              ),
+              color: Colors.black,
+              padding: EdgeInsets.all(30),
+              margin: EdgeInsets.all(20),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              child: Text('three'),
+              color: Colors.cyan,
+              padding: EdgeInsets.all(30),
+              margin: EdgeInsets.all(20),
+            ),
           ),
         ],
       ),
