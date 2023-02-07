@@ -44,7 +44,16 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map((quote) => QuoteCard(
+                quote: quote,
+                delete: () {
+                  print('delete function fired');
+                  setState(() {
+                    quotes.remove(quote);
+                  });
+                }))
+            .toList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
