@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() {
   runApp(
@@ -19,7 +20,7 @@ class _HomeState extends State<Home> {
     Quote(
         text:
             'To live is the rarest thing in the world. Most people exist, that is all.',
-        author: 'Oscar Wilde'),
+        author: 'akash'),
     Quote(
         text: 'That it will never come again is what makes life so sweet.',
         author: 'meet'),
@@ -50,45 +51,6 @@ class _HomeState extends State<Home> {
           print("clicked");
         },
         child: Text('click'),
-      ),
-    );
-  }
-}
-
-class QuoteCard extends StatelessWidget {
-  const QuoteCard({
-    super.key,
-    required this.quote,
-  });
-
-  final quote;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(20, 30, 20, 30),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            Text(
-              '${quote.text}',
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Text(
-              '${quote.author}',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.amber,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
