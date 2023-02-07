@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(
@@ -14,7 +15,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var _counter = 0;
+  List<dynamic> quotes = [
+    Quote(
+        text:
+            'To live is the rarest thing in the world. Most people exist, that is all.',
+        author: 'Oscar Wilde'),
+    Quote(
+        text: 'That it will never come again is what makes life so sweet.',
+        author: 'Emily Dickinson'),
+    Quote(
+        text: 'It is never too late to be what you might have been.',
+        author: 'George Elio'),
+    Quote(
+        text: 'Pain is inevitable. Suffering is optional.',
+        author: 'Haruki Murakami'),
+    Quote(text: 'dddddd', author: 'kkk'),
+    Quote(text: '', author: ''),
+    Quote(text: 'sdfasdf', author: 'sdfsfd'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +42,9 @@ class _HomeState extends State<Home> {
           'my first app in flutter',
         ),
       ),
-      body: Row(children: [
-        ElevatedButton(
-          onPressed: () {
-            setState(() {
-              _counter = _counter + 1;
-            });
-          },
-          child: Text('increment'),
-        ),
-        Text('${_counter}'),
-      ]),
+      body: Column(
+        children: quotes.map((quote) => Text('${quote.text}')).toList(),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("clicked");
