@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
         author: 'Oscar Wilde'),
     Quote(
         text: 'That it will never come again is what makes life so sweet.',
-        author: 'Emily Dickinson'),
+        author: 'meet'),
     Quote(
         text: 'It is never too late to be what you might have been.',
         author: 'George Elio'),
@@ -34,7 +34,37 @@ class _HomeState extends State<Home> {
     Quote(text: 'sdfasdf', author: 'sdfsfd'),
   ];
 
-  Widget quoteTemplate(quote) {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'my first app in flutter',
+        ),
+      ),
+      body: Column(
+        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print("clicked");
+        },
+        child: Text('click'),
+      ),
+    );
+  }
+}
+
+class QuoteCard extends StatelessWidget {
+  const QuoteCard({
+    super.key,
+    required this.quote,
+  });
+
+  final quote;
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.fromLTRB(20, 30, 20, 30),
       child: Padding(
@@ -59,26 +89,6 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'my first app in flutter',
-        ),
-      ),
-      body: Column(
-        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print("clicked");
-        },
-        child: Text('click'),
       ),
     );
   }
