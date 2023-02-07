@@ -34,6 +34,35 @@ class _HomeState extends State<Home> {
     Quote(text: 'sdfasdf', author: 'sdfsfd'),
   ];
 
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(20, 30, 20, 30),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            Text(
+              '${quote.text}',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              '${quote.author}',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.amber,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +72,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Column(
-        children: quotes.map((quote) => Text('${quote.text}')).toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
